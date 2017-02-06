@@ -1,0 +1,126 @@
+body {
+    background-color: #98FB98;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pictures {
+    padding: 20px;
+}
+
+.photo {
+    margin: 15px;
+}
+
+.pic {
+    width: auto;
+    height: auto;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+    -webkit-transition: filter 0.3s, -webkit-filter 0.3s;
+}
+
+.photo:hover .pic {
+    -webkit-filter: none;
+    filter: none;
+}
+
+
+/* 1-й вариант:
+горизонтальный переворот */
+
+
+/* весь контейнер поддерживает перспективу */
+
+.wrapper {
+    display: inline-block;
+    padding: 20px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+}
+
+
+/* переворачиваем сторону при наведении мышью */
+
+.wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.wrapper,
+.card-front,
+.card-back {
+    width: 272px;
+    height: 380px;
+}
+
+
+/* здесь находится скорость перевёртывания */
+
+.card {
+    position: relative;
+    -webkit-transition: -webkit-transform .6s;
+    -moz-transition: -moz-transform .6s;
+    -o-transition: -o-transform .6s;
+    transition: transform .6s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+/* скрываем обратную сторону во время переворота */
+
+.card-front,
+.card-back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* лицевая сторона размещена над обратной */
+
+.card-front {
+    z-index: 2;
+}
+
+
+/* обратная, изначально скрытая сторона */
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+
+/* 2-й вариант:
+вертикальный переворот */
+
+.vertical {
+    display: inline-block;
+    position: relative;
+}
+
+.vertical .back {
+    transform: rotateX(180deg);
+}
+
+.vertical.wrapper .card {
+    transform-origin: 100% 190px;
+    /* половина высоты */
+}
+
+.vertical.wrapper:hover .card {
+    transform: rotateX(-180deg);
+}

@@ -114,7 +114,7 @@ a {
     position: relative;
 }
 
-.vertical .back {
+.vertical .card-back {
     transform: rotateX(180deg);
 }
 

@@ -1,0 +1,128 @@
+body {
+    background-color: #FFFF00;
+    text-align: center;
+}
+
+.wrapper {
+    display: inline-block;
+    padding: 20px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+}
+
+.wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.text {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #FF1493;
+    font-family: Chiller;
+    font-size: 30px;
+}
+
+.text span {
+    margin-left: 10px;
+}
+
+.info span {
+    padding-left: 10px;
+}
+
+.info {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #00008B;
+    font-family: "Britannic Bold";
+    font-size: 20px;
+}
+
+.col-viol {
+    color: #9400D3;
+}
+
+.col-azur {
+    color: #0FF;
+}
+
+.wrapper,
+.card-front,
+.card-back {
+    width: 770px;
+    height: 550px;
+}
+
+.vertical,
+.size {
+    width: 370px;
+    height: 260px;
+}
+
+.third,
+.md {
+    width: 640px;
+    height: 480px;
+}
+
+.card-front img,
+.card-back img,
+.size img,
+.third img,
+.md img {
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .9);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .9);
+}
+
+.card {
+    position: relative;
+    -webkit-transition: -webkit-transform .6s;
+    -moz-transition: -moz-transform .6s;
+    -o-transition: -o-transform .6s;
+    transition: transform .6s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.vertical {
+    display: inline-block;
+    position: relative;
+}
+
+.vertical .card-back {
+    transform: rotateX(180deg);
+}
+
+.vertical.wrapper .card {
+    transform-origin: 100% 130px;
+}
+
+.vertical:hover .card {
+    transform: rotateX(-180deg);
+}

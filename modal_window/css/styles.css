@@ -1,0 +1,147 @@
+body {
+    text-align: center;
+    margin: auto;
+    color: #FFF;
+    background-color: #AFEEEE;
+}
+
+a {
+    text-decoration: none;
+    color: violet;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.info {
+    font-size: 30px;
+}
+
+
+/* Контейнер */
+
+.modal {
+    /* Слой перекрытия */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    /* Трансформации прозрачности при открытии  */
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+    /* Скрываем изначально */
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* Показываем модальное окно */
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Содержание */
+
+.inner {
+    width: 800px;
+    background: pink;
+    position: relative;
+    margin: 5% auto;
+    padding: 30px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+
+/* Ссылка на кнопку Закрыть */
+
+.modal a[href="#close"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent;
+}
+
+
+/* Сбрасываем изменения */
+
+.modal a[href="#close"]:focus {
+    outline: none;
+}
+
+
+/* Создаем кнопку Закрыть */
+
+.modal a[href="#close"]:after {
+    content: 'X';
+    display: block;
+    /* Позиционируем */
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 1.5em;
+    padding: 1px 1px 1px 2px;
+    /* Стили */
+    text-decoration: none;
+    text-shadow: none;
+    text-align: center;
+    font-weight: bold;
+    background: #FF1493;
+    color: #fff;
+    border: 3px solid #fff;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.modal a[href="#close"]:focus:after,
+.modal a[href="#close"]:hover:after {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+}
+
+.modal a[href="#close"]:focus:after {
+    outline: 1px solid #000;
+}
+
+
+/* Открываем модальное окно */
+
+a.openModal {
+    margin: 1em auto;
+    display: block;
+    width: 200px;
+    background: #ccc;
+    text-align: center;
+    padding: 10px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    background: -moz-linear-gradient(#fff, #ddd);
+    background: -webkit-gradient(linear, right top, right bottom, from(rgb(255, 255, 255)), to(rgb(230, 230, 230)));
+    text-shadow: 0 1px 0 #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+a.openModal:hover,
+a.openModal:focus {
+    background: -moz-linear-gradient(#fff, #ccc);
+    background: -webkit-gradient(linear, right top, right bottom, from(rgb(255, 255, 255)), to(rgb(200, 200, 200)));
+}
+
+video {
+    width: 640px;
+    height: 360px;
+}
